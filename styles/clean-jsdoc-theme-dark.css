@@ -1,0 +1,365 @@
+::selection {
+    background: #ffce76;
+    color: #000;
+}
+
+body {
+    background-color: #121216;
+    color: #f8f8f9;
+}
+
+a,
+a:active {
+    color: #00abff;
+}
+
+hr {
+    border: 1px solid #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #f8f8f9;
+}
+
+
+h2 {
+    border-bottom: 0.0625rem solid #333;
+}
+
+.navbar {
+    background: #000;
+}
+
+.navbar-ham {
+    background: #444;
+}
+
+.navbar-ham .first,
+.navbar-ham .second,
+.navbar-ham .third {
+    background: #fff;
+}
+
+.navbar-resize {
+    background: #222;
+}
+
+.resize-dots-container .dots {
+    background-color: #fff;
+}
+
+
+.search-box-input-container {
+    background: #2a2b2c;
+}
+
+.search-icon {
+    fill: #aeaeae;
+}
+
+.search-box-input {
+    color: #fff;
+}
+
+.search-box-input::placeholder {
+    color: #aeaeae;
+}
+
+.search-box-input:focus + .search-icon {
+    fill: #fff;
+}
+
+.search-item-ul {
+    background: #333;
+}
+
+.search-item-ul li:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.search-item-ul a,
+.search-item-ul li {
+    color: #fff;
+}
+
+.accordion-heading {
+    color: #fff;
+    fill: #fff;
+}
+
+.accordion-content {
+    background: #111;
+}
+
+.accordion-content a {
+    color: #fff;
+}
+
+.methods.accordion-content {
+    background: #202020;
+}
+
+.menu-link {
+    color: #fff;
+}
+
+
+tt,
+code,
+kbd,
+samp {
+    background: #222;
+}
+
+
+.signature-attributes {
+    color: #aaa;
+}
+
+
+.ancestors {
+    color: #999;
+}
+
+.ancestors a {
+    color: #999 !important;
+}
+
+.important {
+    color: #950b02;
+}
+
+.type-signature {
+    color: #00918e;
+}
+
+.name,
+.name a {
+    color: #f7f7f7;
+}
+
+.details {
+    background: #000;
+    color: #fff;
+}
+
+.prettyprint,
+.pre-top-bar-container {
+    background: #000;
+}
+
+.member-item-container strong,
+.method-member-container strong {
+    color: #fff;
+}
+
+.pre-top-bar-container {
+    background: #090909;
+}
+
+.prettyprint.source,
+.prettyprint code {
+    background-color: #000;
+}
+
+.prettyprint.linenums li {
+    border-left: 3px #222831 solid;
+}
+
+/* stylelint-disable */
+.prettyprint.linenums li.selected,
+.prettyprint.linenums li.selected * {
+    background-color: #404040;
+}
+/* stylelint-enable */
+
+table .name,
+.params .name,
+.props .name,
+.name code {
+    color: #fff;
+}
+
+table td,
+.params td {
+    background-color: #000;
+    border-top: 1px solid #191919;
+}
+
+table thead tr,
+.params thead tr,
+.props thead tr {
+    background-color: #000;
+    color: #fff;
+}
+
+/* stylelint-disable */
+table .params thead tr,
+.params .params thead tr,
+.props .props thead tr {
+    background-color: #000;
+    color: #fff;
+}
+
+
+.disabled {
+    color: #aaaaaa;
+}
+
+.code-copy-icon-container {
+    fill: #fff;
+}
+
+.code-copy-icon-container:hover {
+    background-color: #333;
+}
+
+.code-lang-name {
+    color: #ff8a00;
+}
+
+.tooltip {
+    background: #ffce76;
+    color: #000;
+}
+
+.tooltip .pun,
+.tooltip .typ {
+    background: #ffce76;
+    color: #000;
+}
+
+/* code */
+.pln {
+    color: #eaeaea;
+  }
+  
+  /* Specify class=linenums on a pre to get line numbering */
+  ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: rgb(153, 128, 102);
+  }
+  
+  li.L0,
+  li.L1,
+  li.L2,
+  li.L3,
+  li.L4,
+  li.L5,
+  li.L6,
+  li.L7,
+  li.L8,
+  li.L9 {
+    padding-left: 1em;
+    background-color: #000000;
+    list-style-type: decimal;
+  }
+  
+  @media screen {
+  
+    /* string content */
+  
+    .str {
+      color: rgb(160, 251, 170);
+    }
+  
+    /* keyword */
+  
+    .kwd {
+      color: rgb(209, 148, 158);
+    }
+  
+    /* comment */
+  
+    .com {
+      color: rgb(153, 128, 102);
+    }
+  
+    /* type name */
+  
+    .typ {
+      color: rgb(74, 139, 179);
+    }
+  
+    /* literal value */
+  
+    .lit {
+      color: #e78c45;
+    }
+  
+    /* punctuation */
+  
+    .pun {
+      color: rgb(245, 184, 61);
+    }
+  
+    /* lisp open bracket */
+  
+    .opn {
+      color: #eaeaea;
+    }
+  
+    /* lisp close bracket */
+  
+    .clo {
+      color: #eaeaea;
+    }
+  
+    /* markup tag name */
+  
+    .tag {
+      color: #d54e53;
+    }
+  
+    /* markup attribute name */
+  
+    .atn {
+      color: #e78c45;
+    }
+  
+    /* markup attribute value */
+  
+    .atv {
+      color: rgb(160, 251, 170);
+    }
+  
+    /* declaration */
+  
+    .dec {
+      color: #e78c45;
+    }
+  
+    /* variable name */
+  
+    .var {
+      color: #d54e53;
+    }
+  
+    /* function name */
+  
+    .fun {
+      color: #7aa6da;
+    }
+  }
+
+
+blockquote {
+    background: #202020;
+    border-left: 4px solid rgb(221, 221, 221);
+    color: rgb(185, 179, 171);
+}
+
+ol.linenums li {
+    color: #fff;
+}
+
+code {
+    background: #333;
+    color: #fff;
+}
