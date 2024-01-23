@@ -31,7 +31,7 @@
 
 
     <title>
-      StreamEvents
+      Logger
     </title>
 
     <!--[if lt IE 9]>
@@ -98,7 +98,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        StreamEvents
+        Logger
       </h1>
       
 
@@ -113,15 +113,7 @@
 <header>
     
         
-        <h2>
-        
-        StreamEvents
-        
-        </h2>
-        
-        
-            <div class="class-description"><p>Subscribe to stream events, such as receiving the amount of viewers of a stream.</p>
-<p>These events are handled via a WebSocket with Wowza Video.</p></div>
+            
         
     
 </header>
@@ -131,6 +123,17 @@
     <div class="container-overview">
     
         
+            <div class="description"><p>Manage all log messages from SDK modules. You can use this logger to add your own custom
+messages and set your own custom log handlers to forward all messages to your own monitoring
+system.</p>
+<p>By default, all loggers are set to level OFF (Logger.OFF), and 
+the following log levels are available.</p>
+<p>This module is based on <a href="https://github.com/jonnyreeves/js-logger">js-logger</a>. For more information, see 
+the js-logger documentation and our examples.</p></div>
+        
+
+        
+            
 
 
 
@@ -178,7 +181,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="StreamEvents.js.html">StreamEvents.js</a>, <a href="StreamEvents.js.html#line34">line 34</a>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line4">line 4</a>
             </li></ul></dd>
         </div>
     
@@ -206,7 +209,45 @@
 
 
 
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Examples</strong>
+        
+    <div class="rel">
+    <pre class="prettyprint"><code>// Log a message
+Logger.info('This is an info log', 445566)
+// [Global] 2021-04-05T15:58:44.893Z - This is an info log 445566</code></pre>
+    
+    
+    </div>
 
+    <div class="rel">
+    <pre class="prettyprint"><code>// Create a named logger
+const myLogger = Logger.get('CustomLogger')
+myLogger.setLevel(Logger.WARN)
+myLogger.warn('This is a warning log')
+// [CustomLogger] 2021-04-05T15:59:53.377Z - This is a warning log</code></pre>
+    
+    
+    </div>
+
+    <div class="rel">
+    <pre class="prettyprint"><code>// Profiling
+// Start timing something
+Logger.time('Timer name')
+
+// ... some time passes ...
+
+// Stop timing something.
+Logger.timeEnd('Timer name')
+// Timer name: 35282.997802734375 ms</code></pre>
+    
+    
+    </div>
+
+    </div>
+
+
+        
     
     </div>
 
@@ -221,6 +262,591 @@
     
 
     
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="~DEBUG">
+    <a href="#~DEBUG">#</a>
+    <span class="type-signature">(inner, constant) </span>DEBUG<span class="type-signature"> :<a href="global.html#LogLevel">LogLevel</a></span>
+</h4>
+
+
+
+
+<div class="description">
+    <p>Logger.DEBUG</p>
+</div>
+
+
+
+    <div class="member-item-container flex">
+        <strong>Type: </strong>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="global.html#LogLevel">LogLevel</a></span>
+
+
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line93">line 93</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~ERROR">
+    <a href="#~ERROR">#</a>
+    <span class="type-signature">(inner, constant) </span>ERROR<span class="type-signature"> :<a href="global.html#LogLevel">LogLevel</a></span>
+</h4>
+
+
+
+
+<div class="description">
+    <p>Logger.ERROR</p>
+</div>
+
+
+
+    <div class="member-item-container flex">
+        <strong>Type: </strong>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="global.html#LogLevel">LogLevel</a></span>
+
+
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line97">line 97</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~INFO">
+    <a href="#~INFO">#</a>
+    <span class="type-signature">(inner, constant) </span>INFO<span class="type-signature"> :<a href="global.html#LogLevel">LogLevel</a></span>
+</h4>
+
+
+
+
+<div class="description">
+    <p>Logger.INFO</p>
+</div>
+
+
+
+    <div class="member-item-container flex">
+        <strong>Type: </strong>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="global.html#LogLevel">LogLevel</a></span>
+
+
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line94">line 94</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~OFF">
+    <a href="#~OFF">#</a>
+    <span class="type-signature">(inner, constant) </span>OFF<span class="type-signature"> :<a href="global.html#LogLevel">LogLevel</a></span>
+</h4>
+
+
+
+
+<div class="description">
+    <p>Logger.OFF</p>
+</div>
+
+
+
+    <div class="member-item-container flex">
+        <strong>Type: </strong>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="global.html#LogLevel">LogLevel</a></span>
+
+
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line98">line 98</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~TIME">
+    <a href="#~TIME">#</a>
+    <span class="type-signature">(inner, constant) </span>TIME<span class="type-signature"> :<a href="global.html#LogLevel">LogLevel</a></span>
+</h4>
+
+
+
+
+<div class="description">
+    <p>Logger.TIME</p>
+</div>
+
+
+
+    <div class="member-item-container flex">
+        <strong>Type: </strong>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="global.html#LogLevel">LogLevel</a></span>
+
+
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line95">line 95</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~TRACE">
+    <a href="#~TRACE">#</a>
+    <span class="type-signature">(inner, constant) </span>TRACE<span class="type-signature"> :<a href="global.html#LogLevel">LogLevel</a></span>
+</h4>
+
+
+
+
+<div class="description">
+    <p>Logger.TRACE</p>
+</div>
+
+
+
+    <div class="member-item-container flex">
+        <strong>Type: </strong>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="global.html#LogLevel">LogLevel</a></span>
+
+
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line92">line 92</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~WARN">
+    <a href="#~WARN">#</a>
+    <span class="type-signature">(inner, constant) </span>WARN<span class="type-signature"> :<a href="global.html#LogLevel">LogLevel</a></span>
+</h4>
+
+
+
+
+<div class="description">
+    <p>Logger.WARN</p>
+</div>
+
+
+
+    <div class="member-item-container flex">
+        <strong>Type: </strong>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="global.html#LogLevel">LogLevel</a></span>
+
+
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line96">line 96</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+        
+    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -230,9 +856,9 @@
 
     
 
-    <h4 class="name" id=".getEventsLocation">
-        <a href="#.getEventsLocation">#</a>
-        <span class="type-signature">(static) </span>getEventsLocation<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span>
+    <h4 class="name" id="~get">
+        <a href="#~get">#</a>
+        <span class="type-signature">(inner) </span>get<span class="signature">(name)</span><span class="type-signature"> &rarr; {Object}</span>
     </h4>
 
     
@@ -240,252 +866,8 @@
 
 
     <div class="description">
-        <p>Get the current WebSocket stream events location.</p>
-<p>By default, wss://streamevents.wowza.com/ws is the location.</p>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="StreamEvents.js.html">StreamEvents.js</a>, <a href="StreamEvents.js.html#line75">line 75</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-<div class="param-desc">
-    <p>The stream events location.</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">String</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".init">
-        <a href="#.init">#</a>
-        <span class="type-signature">(async, static) </span>init<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="StreamEvents.html">StreamEvents</a>>}</span>
-    </h4>
-
-    
-
-
-
-    <div class="description">
-        <p>Initialize the connection with stream events.</p>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="StreamEvents.js.html">StreamEvents.js</a>, <a href="StreamEvents.js.html#line52">line 52</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-<div class="param-desc">
-    <p>A promise object that represents the StreamEvents instance
-once the connection with the stream events is complete.</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;<a href="StreamEvents.html">StreamEvents</a>></span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Example</strong>
-        
-    <div class="rel">
-    <pre class="prettyprint"><code>const streamEvents = await StreamEvents.init()</code></pre>
-    
-    
-    </div>
-
-    </div>
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".setEventsLocation">
-        <a href="#.setEventsLocation">#</a>
-        <span class="type-signature">(static) </span>setEventsLocation<span class="signature">(url)</span><span class="type-signature"></span>
-    </h4>
-
-    
-
-
-
-    <div class="description">
-        <p>Set the WebSocket stream events location.</p>
+        <p>Get or create a named logger. Named loggers are used to group log messages
+that refer to a common context.</p>
     </div>
 
 
@@ -522,7 +904,7 @@ once the connection with the stream events is complete.</p>
 
         <tr>
             
-                <td class="name"><code>url</code></td>
+                <td class="name"><code>name</code></td>
             
 
             <td class="type">
@@ -538,7 +920,7 @@ once the connection with the stream events is complete.</p>
 
             
 
-            <td class="description last"><p>The URL for the new stream events location.</p></td>
+            <td class="description last"></td>
         </tr>
 
     
@@ -583,7 +965,279 @@ once the connection with the stream events is complete.</p>
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="StreamEvents.js.html">StreamEvents.js</a>, <a href="StreamEvents.js.html#line65">line 65</a>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line174">line 174</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container mt-20">
+    <strong>Returns:</strong>
+        
+            
+<div class="param-desc">
+    <p>A logger object with the same properties and functions as Logger except for 
+history- and handlers-related functions.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+            
+    </div>
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Example</strong>
+        
+    <div class="rel">
+    <pre class="prettyprint"><code>const myLogger = Logger.get('MyLogger')
+// Set logger level
+myLogger.setLevel(Logger.DEBUG)
+
+myLogger.debug('This is a debug log')
+myLogger.info('This is a info log')
+myLogger.warn('This is a warning log')
+
+// Get logger level
+myLogger.getLevel()
+// {value: 3, name: 'INFO'}</code></pre>
+    
+    
+    </div>
+
+    </div>
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~getHistory">
+        <a href="#~getHistory">#</a>
+        <span class="type-signature">(inner) </span>getHistory<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;String>}</span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Get all logs generated during a session.
+All logs are recollected besides the log level selected by the user.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line103">line 103</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container mt-20">
+    <strong>Returns:</strong>
+        
+            
+<div class="param-desc">
+    <p>All logs recollected from level TRACE.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;String></span>
+
+
+    </dd>
+</dl>
+
+            
+    </div>
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Example</strong>
+        
+    <div class="rel">
+    <pre class="prettyprint"><code>Logger.getHistory()
+// Outupt
+// [
+//   "[Director] 2021-04-05T14:09:26.625Z - Getting publisher connection data for stream name:  1xxx2",
+//   "[Director] 2021-04-05T14:09:27.064Z - Getting publisher response",
+//   "[Publish]  2021-04-05T14:09:27.066Z - Broadcasting"
+// ]</code></pre>
+    
+    
+    </div>
+
+    </div>
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~getHistoryMaxSize">
+        <a href="#~getHistoryMaxSize">#</a>
+        <span class="type-signature">(inner) </span>getHistoryMaxSize<span class="signature">()</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Get the maximum count of logs preserved during a session.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line118">line 118</a>
             </li></ul></dd>
         </div>
     
@@ -611,15 +1265,26 @@ once the connection with the stream events is complete.</p>
 
 
 
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Example</strong>
+        
+    <div class="rel">
+    <pre class="prettyprint"><code>Logger.getHistoryMaxSize()</code></pre>
+    
+    
+    </div>
+
+    </div>
+
 
         
             
 
     
 
-    <h4 class="name" id="onUserCount">
-        <a href="#onUserCount">#</a>
-        <span class="type-signature"></span>onUserCount<span class="signature">(options, streamName<span class="signature-attributes">opt</span>, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    <h4 class="name" id="~getLevel">
+        <a href="#~getLevel">#</a>
+        <span class="type-signature">(inner) </span>getLevel<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="global.html#LogLevel">LogLevel</a>}</span>
     </h4>
 
     
@@ -627,7 +1292,139 @@ once the connection with the stream events is complete.</p>
 
 
     <div class="description">
-        <p>Subscribe to user count events and invoke the callback once a new message is available.</p>
+        <p>Get the current global log level 
+or the level of any particular logger.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line155">line 155</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container mt-20">
+    <strong>Returns:</strong>
+        
+            
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#LogLevel">LogLevel</a></span>
+
+
+    </dd>
+</dl>
+
+            
+    </div>
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Example</strong>
+        
+    <div class="rel">
+    <pre class="prettyprint"><code>// Global Level
+Logger.getLevel()
+// Output
+// {value: 2, name: 'DEBUG'}
+
+// Module Level
+Logger.get('Publish').getLevel()
+// Output
+// {value: 5, name: 'WARN'}</code></pre>
+    
+    
+    </div>
+
+    </div>
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~setHandler">
+        <a href="#~setHandler">#</a>
+        <span class="type-signature">(inner) </span>setHandler<span class="signature">(handler, level)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Add your custom log handler to Logger at the specified level.</p>
     </div>
 
 
@@ -652,11 +1449,7 @@ once the connection with the stream events is complete.</p>
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
-        
-        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -668,116 +1461,46 @@ once the connection with the stream events is complete.</p>
 
         <tr>
             
-                <td class="name"><code>options</code></td>
+                <td class="name"><code>handler</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#OnUserCountOptions">OnUserCountOptions</a></span>
-|
-
-<span class="param-type">String</span>
+<span class="param-type"><a href="global.html#loggerHandler">loggerHandler</a></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last"><p>Available user count options.</p></td>
+            <td class="description last"><p>Your custom log handler function.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>streamName</code></td>
+                <td class="name"><code>level</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type"><a href="global.html#LogLevel">LogLevel</a></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
-                <td class="default">
-                
-                    null
-                
-                </td>
-            
 
-            <td class="description last"><p><em>Deprecated.</em> Use the options parameter instead.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#onUserCountCallback">onUserCountCallback</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    null
-                
-                </td>
-            
-
-            <td class="description last"><p><em>Deprecated</em>. Use the options parameter instead.</p></td>
+            <td class="description last"><p>The log level to filter messages.</p></td>
         </tr>
 
     
@@ -822,7 +1545,7 @@ once the connection with the stream events is complete.</p>
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="StreamEvents.js.html">StreamEvents.js</a>, <a href="StreamEvents.js.html#line106">line 106</a>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line214">line 214</a>
             </li></ul></dd>
         </div>
     
@@ -854,26 +1577,19 @@ once the connection with the stream events is complete.</p>
         <strong>Example</strong>
         
     <div class="rel">
-    <pre class="prettyprint"><code>import StreamEvents from '@wowzamediasystems/sdk-rts'
-
-//Create a new instance
-const streamEvents = await StreamEvents.init()
-const accountId = "Publisher account ID"
-const streamName = "Stream Name"
-const options = {
-   accountId,
-   streamName,
-   callback: (data) => {
-     if (data.error) {
-       console.error("Handle error: ", error)
-     } else {
-       console.log("Viewers: ", data.count)
-     }
-   }
+    <pre class="prettyprint"><code>const myHandler = (messages, context) => {
+ // You can filter by logger
+ if (context.name === 'Publish') {
+   sendToMyLogger(messages[0])
  }
 
-//Initializes the user count event
-streamEvents.onUserCount(options)</code></pre>
+ // You can filter by logger level
+ if (context.level.value >= Logger.INFO.value) {
+   sendToMyLogger(messages[0])
+ }
+}
+
+Logger.setHandler(myHandler, Logger.INFO)</code></pre>
     
     
     </div>
@@ -886,9 +1602,9 @@ streamEvents.onUserCount(options)</code></pre>
 
     
 
-    <h4 class="name" id="stop">
-        <a href="#stop">#</a>
-        <span class="type-signature"></span>stop<span class="signature">()</span><span class="type-signature"></span>
+    <h4 class="name" id="~setHistoryMaxSize">
+        <a href="#~setHistoryMaxSize">#</a>
+        <span class="type-signature">(inner) </span>setHistoryMaxSize<span class="signature">(maxSize)</span><span class="type-signature"></span>
     </h4>
 
     
@@ -896,7 +1612,8 @@ streamEvents.onUserCount(options)</code></pre>
 
 
     <div class="description">
-        <p>Stop listening to stream events.</p>
+        <p>Set the maximum count of logs to preserve during a session.
+The default value is 10000.</p>
     </div>
 
 
@@ -906,6 +1623,57 @@ streamEvents.onUserCount(options)</code></pre>
 
 
 
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>maxSize</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The maximum size of the log history. Set to 0 to disable the log history or -1 for an unlimited log history.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
 
 
 
@@ -943,7 +1711,7 @@ streamEvents.onUserCount(options)</code></pre>
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="StreamEvents.js.html">StreamEvents.js</a>, <a href="StreamEvents.js.html#line132">line 132</a>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line126">line 126</a>
             </li></ul></dd>
         </div>
     
@@ -975,7 +1743,164 @@ streamEvents.onUserCount(options)</code></pre>
         <strong>Example</strong>
         
     <div class="rel">
-    <pre class="prettyprint"><code>streamEvents.stop()</code></pre>
+    <pre class="prettyprint"><code>Logger.setHistoryMaxSize(100)</code></pre>
+    
+    
+    </div>
+
+    </div>
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~setLevel">
+        <a href="#~setLevel">#</a>
+        <span class="type-signature">(inner) </span>setLevel<span class="signature">(level)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Set the log level for all loggers.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>level</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#LogLevel">LogLevel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The new log level.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="Logger.js.html">Logger.js</a>, <a href="Logger.js.html#line136">line 136</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Example</strong>
+        
+    <div class="rel">
+    <pre class="prettyprint"><code>// Global Level
+Logger.setLevel(Logger.DEBUG)
+
+// Module Level
+Logger.get('Publish').setLevel(Logger.DEBUG)</code></pre>
     
     
     </div>
